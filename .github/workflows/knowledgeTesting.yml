@@ -46,6 +46,6 @@ jobs:
         with:
           working-directory: ./knowledge
           build: npm run build
-          start: npm start
+          start: npm start -p 3000
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
