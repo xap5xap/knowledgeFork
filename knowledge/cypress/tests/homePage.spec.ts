@@ -5,7 +5,7 @@ describe("Home page", () => {
     //header navbar
     cy.findByTestId("app-nav-bar").should("exist");
     //the search section
-    cy.findByTestId("home-search").should("exist");
+    cy.findByTestId("home-searchs").should("exist");
     //The stats should show
   });
 });
