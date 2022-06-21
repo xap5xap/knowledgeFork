@@ -56,15 +56,14 @@ jobs:
       - name: Unit tests
         run: npm run test:ci
   e2e-tests:
-    runs-on: ubuntu-latest
-    name: E2E tests - Chrome
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: cypress-io/github-action@v4
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cypress tests
+        uses: ./
         with:
-          working-directory: ./knowledge
-          browser: chrome
+          working-directory: knowledge
           start: npm start
           wait-on: "http://localhost:3000"
-          wait-on-timeout: 120
-          record: false
