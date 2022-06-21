@@ -134,7 +134,7 @@ const HomePage: NextPage = () => {
   return (
     <PagesNavbar showSearch={!isIntersecting}>
       <HomeSearch sx={{ mt: "var(--navbar-height)" }} onSearch={handleSearch} ref={homeSearchRef} />
-      <Container sx={{ my: 12 }}>
+      <Container sx={{ my: 10 }}>
         <HomeFilter
           sx={{ mb: 8 }}
           onTagsChange={handleTagsChange}
