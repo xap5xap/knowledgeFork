@@ -43,3 +43,5 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
+        with:
+          working-directory: ./knowledge
