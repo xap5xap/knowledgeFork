@@ -47,9 +47,7 @@ export const NodeItem = ({ node }: NodeItemProps) => {
 
   const handleGetInstitutionsData = async () => {
     const names: string[] = node.institutions.map(cur => cur.name);
-    if (institutionsData.length) {
-      return;
-    }
+    if (institutionsData.length) return;
 
     const institutions = await getInstitutionsByName(names);
     setInstitutionsData(institutions);
@@ -83,7 +81,7 @@ export const NodeItem = ({ node }: NodeItemProps) => {
   };
 
   return (
-    <Card sx={{ width: "100%", ":hover": { boxShadow: "2px 2px 15px rgba(0, 0, 0, 0.2)" } }}>
+    <Card data-testid="node-item" sx={{ width: "100%", ":hover": { boxShadow: "2px 2px 15px rgba(0, 0, 0, 0.2)" } }}>
       <NextLink passHref href={getNodePageUrl(node.title || "", node.id)}>
         <Link underline="none" color="inherit">
           <CardActionArea sx={{ pt: { xs: 4, lg: 6 }, px: { xs: 5, lg: 10 }, pb: 2 }}>
