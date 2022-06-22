@@ -37,7 +37,7 @@ describe("Home page", () => {
     cy.findByTestId("node-item-container").should("exist");
   });
 
-  it.only("Should search by tags", () => {
+  it("Should search by tags", () => {
     //let's intercept the data to get consistent results for the test
     cy.intercept("GET", "/api/tagsAutocomplete?q=", { statusCode: 200, body: tagsAutoCompletePopular }).as(
       "tagsAutocompleteResponseMostPopular"
